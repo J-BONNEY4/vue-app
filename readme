@@ -1,0 +1,5 @@
+when making changes
+git add .
+git commit -m "update vue-app"
+git push
+mounted (a constructor) for calling the function
