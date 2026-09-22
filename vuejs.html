@@ -1,0 +1,57 @@
+<!-- Paste the below as comments in your HTML file
+Advantages of using a JS Framework
+
+1.Two Way Data Binding - Creating a variable in JS and Displaying it easily on an HTML Element.
+
+2.Enables JavaScript IF Statements and FOR Loops on HTML Elements.
+
+3.Enable calling of JavaScript Methods in HTML Elements.
+
+4.Enables making requests to an API through a JS Library called Axios.Fetch/Store data. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vue Js concepts</h1>
+    <!-- Everything you want accessed in VUE,needs to be put within a <div> -->
+    <div id="app">
+        <p>{{full_name}}</p>
+        <p>{{location}}</p>
+        <!-- v-if directive -->
+        <p v-if="marks> 50">Pass</p>
+        <p v-if="marks < 50">Fail</p>
+        <!-- v-for directive -->
+        <ul>
+            <li v-for="student in students"> {{student.name}}-{{student.grade}}-{{student.loc}}</li>
+        </ul>
+    </div>
+    <!-- paste the vue CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
+    <Script>
+        new Vue({
+            // Capture the div with id app for view to access.
+            el: '#app',
+            // all variables are stored in data object below
+            data: {
+                full_name: "Bonface Mutui",
+                location: "Nairobi",
+                marks: 30,
+                students: [
+                    { "name": "Mike", "grade": "A", "loc": "Nairobi" },
+                    { "name": "Lucy", "grade": "B", "loc": "Mombasa" },
+                    { "name": "Tony", "grade": "C", "loc": "Kisumu" }
+                ]
+            },
+            // all methods are stored in methods object.
+            methods: {
+            }
+        });
+    </Script>
+</body>
+
+</html>
