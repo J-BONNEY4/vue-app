@@ -46,7 +46,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form @submit.prevent="register_user">
+                        <form>
                             <div class="mb-3">
                                 <label class="form-label">Full Name</label>
 
@@ -110,7 +110,6 @@
                 alertMessage:"",
                 alertSuccessShow:false,
                 alertDangerShow:false
-
             },
             methods:{
                 register_user(){
@@ -150,12 +149,14 @@
                         this.alertMessage = error.response?.data?.message ||"Registration failed"
                     }
             )
-                },
+            },
             mounted(){
                 if (localStorage.getItem("token") !=null){
-                    window.location.href="index.html"
+                    window.location.href="index.html";
                 }
-                }
+            }
+            
+            
             }
         })
     </script>
