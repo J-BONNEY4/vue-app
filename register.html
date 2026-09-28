@@ -125,7 +125,7 @@
                     }
                     console.log("data to flask..");
                     axios.post(
-                        "http://127.0.0.1:5000/register",),
+                        "http://127.0.0.1:5000/register",
                         {
                             full_name:this.full_name,
                             email:this.email,
@@ -151,10 +151,10 @@
                     }
             )
                 },
-                mounted(){
-                    if (localStorage.getItem("token") !=null){
-                        window.location.href="index.html"
-                    }
+            mounted(){
+                if (localStorage.getItem("token") !=null){
+                    window.location.href="index.html"
+                }
                 }
             }
         })
