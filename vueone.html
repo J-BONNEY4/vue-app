@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue API</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
         {{external}} <br>
         {{intro}}
 
-       <form @submit.prevent="saveName">
+<form @submit.prevent="saveName">
     <label for="">First Name</label>
     <input type="text" v-model="form.first_name">
 
@@ -25,7 +25,7 @@
 <h1>Full Name: {{ full_name }}</h1>
 
 <br><br>
-
+ <!-- Accessing Object Values -->
 <table border="1">
     <thead>
         <th>Open</th>
@@ -65,7 +65,7 @@
                     this.intro = "Update by method"
                 },
                 async ibm_stock_call() {
-                    // make an asyncronous Request.
+                    // make an asyncronous Request./storing API data.
                     const results = await axios.get("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo")
                     console.log(results.data["Time Series (5min)"])
                     this.ibm_stock = results.data["Time Series (5min)"]
@@ -75,11 +75,11 @@
                 saveName(){
                     console.log("first name  ", this.form.first_name)
                     console.log("last name  ", this.form.last_name)
-                 
-                    // storing data in the browser.
+                
+                    // localStorage storing data in the browser./This stores the first name in the browser.
                     localStorage.setItem("first_name", this.form.first_name)
                     localStorage.setItem("last_name", this.form.last_name)
-
+                    // clear the form
                     this.form.first_name=""
                     this.form.last_name= ""
 
@@ -91,6 +91,7 @@
             mounted() {
                 this.intro_method();
                 this.ibm_stock_call();
+                // get saved name from localStorage
                 this.full_name= localStorage.getItem("first_name") + "  " + localStorage.getItem("last_name")
                 
             }

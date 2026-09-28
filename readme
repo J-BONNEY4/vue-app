@@ -3,3 +3,29 @@ git add .
 git commit -m "update vue-app"
 git push
 mounted (a constructor) for calling the function
+
+Axios is a JavaScript library used to communicate with APIs.
+Methods
+
+Methods contain functions that perform actions.
+
+| Vue Concept              | Meaning                         |
+| ------------------------ | ------------------------------- |
+| `new Vue()`              | Creates a Vue application       |
+| `el`                     | Connects Vue to HTML            |
+| `data`                   | Stores application data         |
+| `methods`                | Stores functions                |
+| `mounted()`              | Runs after Vue loads            |
+| `{{ }}`                  | Displays data                   |
+| `v-model`                | Two-way data binding            |
+| `v-for`                  | Loops through data              |
+| `v-if`                   | Conditionally displays elements |
+| `@click`                 | Handles a click                 |
+| `@submit`                | Handles form submission         |
+| `.prevent`               | Prevents default browser action |
+| `this`                   | Refers to the Vue instance      |
+| `axios.get()`            | Gets data from an API           |
+| `async`                  | Defines asynchronous function   |
+| `await`                  | Waits for asynchronous result   |
+| `localStorage.setItem()` | Saves browser data              |
+| `localStorage.getItem()` | Retrieves browser data          |
