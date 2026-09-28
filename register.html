@@ -114,14 +114,18 @@
             },
             methods:{
                 register_user(){
-                    if (this.full_name==="" || this.email==="" || this.phone_number==="" || this.password==="" || this.confirm_password===""){
+                    if (
+                        this.full_name==="" || this.email==="" ||
+                        this.phone_number==="" || this.password==="" || 
+                        this.confirm_password===""){
                         this.alertDangerShow= true
                         this.alertSuccessShow=false
                         this.alertMessage="Ensure all fields are filled."
                         return
                     }
                     console.log("data to flask..");
-                    axios.post(axios.post("http://127.0.0.1:5000/register",),
+                    axios.post(
+                        "http://127.0.0.1:5000/register",),
                         {
                             full_name:this.full_name,
                             email:this.email,
